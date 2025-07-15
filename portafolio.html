@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Personal - Sonia Correa</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ----------------------------------- */
+        /* --- Estilos Globales y Variables CSS --- */
+        /* ----------------------------------- */
+        /* Definición de variables CSS personalizadas para colores, espaciado, tipografía, etc.
+           Esto facilita enormemente la modificación del diseño y ayuda a mantener una coherencia visual en todo el sitio. */
+        :root {
+            /* Colores principales de la paleta */
+            --primary-color: #4A90E2;        /* Un azul primario suave y moderno */
+            --secondary-color: #3C7DCF;       /* Un azul un poco más oscuro, ideal para efectos de hover */
+            --accent-color: #FF7043;          /* Un naranja vibrante para acentos y llamadas a la acción */
+            --text-color-dark: #333;          /* Gris oscuro para el texto principal, fácil de leer */
+            --text-color-light: #f5f5f5;      /* Gris muy claro para el texto sobre fondos oscuros */
+            /* Colores de fondo para diferentes secciones, aportando variedad y distinción */
+            --bg-light-gray: #F8F8F8;         /* Un fondo muy claro, casi blanco */
+            --bg-off-white: #FFFFFF;          /* Blanco puro para secciones destacadas */
+            --bg-skills: #E0F2F7;             /* Azul muy claro para la sección de habilidades */
+            --bg-programs: #E8F5E9;           /* Verde muy claro para la sección de programas */
+            --bg-formacion: #F3E5F5;          /* Morado muy claro para la sección de formación */
+            --bg-projects: #FFF3E0;           /* Naranja muy claro para la sección de proyectos */
+            --bg-contact: #E1F5FE;            /* Azul claro para la sección de contacto */
+            --bg-dark: #2C3E50;                 /* Azul oscuro para el pie de página (footer) */
+
+            /* Variables para espaciado, útiles para paddings y margins */
+            --spacing-xs: 0.5rem;   /* Espaciado extra pequeño */
+            --spacing-sm: 1rem;     /* Espaciado pequeño */
+            --spacing-md: 1.5rem;   /* Espaciado medio */
+            --spacing-lg: 2rem;     /* Espaciado grande */
+            --spacing-xl: 3rem;     /* Espaciado extra grande */
+            --spacing-xxl: 5rem;    /* Espaciado extra extra grande (para separación de secciones) */
+
+            /* Variables para tipografía, definiendo familias y tamaños de fuente */
+            --font-family-heading: 'Montserrat', sans-serif; /* Fuente para títulos */
+            --font-family-body: 'Raleway', sans-serif;       /* Fuente para el texto del cuerpo */
+            --font-base: 1rem;       /* Tamaño de fuente base (normalmente 16px) */
+            --font-small: 0.9rem;    /* Fuente pequeña */
+            --font-medium: 1.1rem;   /* Fuente mediana */
+            --font-large: 1.6rem;    /* Fuente grande */
+            --font-xl: 2.2rem;       /* Fuente extra grande */
+            --font-xxl: 3rem;        /* Fuente extra extra grande */
+            --font-hero-text: 1.8rem; /* Tamaño de fuente específico para el texto en la sección Hero */
+            --font-hero-btn: 1.1rem;  /* Tamaño de fuente específico para el botón en la sección Hero */
+
+            /* Variables para radios de borde y sombras, para elementos con esquinas redondeadas y efectos de profundidad */
+            --border-radius-sm: 5px;  /* Radio de borde pequeño */
+            --border-radius-md: 10px; /* Radio de borde mediano */
+            --border-radius-lg: 15px; /* Radio de borde grande */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);  /* Sombra pequeña */
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.12); /* Sombra mediana */
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra grande */
+
+            /* Variables para transiciones, para animaciones suaves */
+            --transition-speed: 0.3s; /* Velocidad de la transición */
+            --transition-ease: ease-in-out; /* Tipo de curva de aceleración para la transición */
+            --default-transition: all var(--transition-speed) var(--transition-ease); /* Transición por defecto para la mayoría de los elementos */
+        }
+
+        /* Restablecimiento básico para todos los elementos: elimina márgenes y paddings por defecto del navegador,
+           y utiliza 'box-sizing: border-box' para facilitar el cálculo de tamaños (padding y borde se incluyen en el ancho/alto). */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Habilita el comportamiento de desplazamiento suave (smooth scroll) al hacer clic en enlaces internos */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Estilos generales aplicados al cuerpo del documento */
+        body {
+            background-color: var(--bg-off-white); /* Color de fondo general */
+            color: var(--text-color-dark);         /* Color de texto por defecto */
+            font-family: var(--font-family-body);  /* Fuente para el cuerpo del texto */
+            font-size: var(--font-base);           /* Tamaño de fuente base */
+            line-height: 1.7; /* Mayor interlineado (espacio entre líneas de texto) para una mejor legibilidad */
+        }
+
+        /* Estilos generales para todos los encabezados (h1 a h6) */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading); /* Fuente específica para títulos */
+            color: var(--text-color-dark);         /* Color de texto para títulos */
+            margin-bottom: var(--spacing-sm);      /* Margen inferior para separar del contenido siguiente */
+            font-weight: 700;                      /* Negrita para los títulos */
+        }
+        /* Estilos específicos para los títulos de sección (h2) */
+        h2 {
+            font-size: var(--font-xl);             /* Tamaño de fuente grande para los títulos de sección */
+            margin-bottom: var(--spacing-xl);      /* Mayor margen inferior para una clara separación de la sección */
+            position: relative;                    /* Necesario para posicionar la línea decorativa con el pseudo-elemento ::after */
+            padding-bottom: var(--spacing-xs);     /* Pequeño padding inferior para la línea */
+        }
+        /* Línea decorativa que aparece debajo de cada título de sección (h2) */
+        h2::after {
+            content: '';                           /* Contenido vacío, la línea se crea con estilos */
+            position: absolute;                    /* Posicionamiento absoluto respecto a su padre (h2) */
+            left: 50%;                             /* Centra la línea horizontalmente */
+            bottom: 0;                             /* La coloca en la parte inferior del h2 */
+            transform: translateX(-50%);           /* Ajusta el centrado real (basado en el ancho de la línea) */
+            width: 80px;                           /* Ancho de la línea */
+            height: 4px;                           /* Grosor de la línea */
+            background-color: var(--accent-color); /* Color de acento para la línea */
+            border-radius: 2px;                    /* Ligeramente redondeada */
+        }
+
+        /* Estilos generales para los enlaces (etiquetas <a>) */
+        a {
+            text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+            color: var(--primary-color); /* Color principal para los enlaces */
+            transition: color var(--default-transition); /* Transición suave del color al interactuar */
+        }
+
+        /* Estilos para los enlaces al pasar el ratón (hover) o al enfocarlos con el teclado (focus) */
+        a:hover, a:focus {
+            color: var(--secondary-color); /* Cambia a un color secundario al interactuar */
+            outline: 2px solid var(--primary-color); /* Indicador de enfoque visible y fuerte para mejorar la accesibilidad con teclado */
+            outline-offset: 3px; /* Separa el contorno del borde del elemento */
+            border-radius: var(--border-radius-sm); /* Ligeramente redondeado para el contorno */
+        }
+
+        /* ----------------------- */
+        /* --- Clases de Utilidad --- */
+        /* ----------------------- */
+        /* Contenedor principal para centrar el contenido y limitar su ancho máximo en pantallas grandes */
+        .container {
+            max-width: 1200px; /* Ancho máximo */
+            margin: 0 auto;    /* Centra el contenedor horizontalmente */
+            padding: 0 var(--spacing-md); /* Pequeño padding a los lados para evitar que el contenido toque los bordes de la pantalla */
+        }
+
+        /* Relleno (padding) consistente para todas las secciones principales del sitio */
+        .section-padding {
+            padding: var(--spacing-xxl) var(--spacing-lg); /* Padding superior/inferior y lateral */
+            text-align: center; /* Centra el contenido de texto dentro de la sección */
+        }
+
+        /* ----------- */
+        /* --- Header (Encabezado de la Página) --- */
+        /* ----------- */
+        header {
+            background-color: var(--bg-light-gray); /* Color de fondo del encabezado */
+            padding: var(--spacing-sm) var(--spacing-lg); /* Relleno interno */
+            position: sticky; /* Hace que el encabezado se mantenga fijo en la parte superior al hacer scroll */
+            top: 0; /* Lo fija en la parte superior */
+            z-index: 1000; /* Asegura que el encabezado esté siempre por encima de otros elementos al hacer scroll */
+            box-shadow: var(--shadow-sm); /* Sombra sutil para darle profundidad */
+        }
+
+        /* Estilos para la barra de navegación dentro del encabezado */
+        nav {
+            display: flex; /* Utiliza Flexbox para organizar los elementos */
+            align-items: center; /* Alinea los elementos verticalmente al centro */
+            justify-content: space-between; /* Distribuye el espacio entre el logo y los enlaces de navegación */
+            max-width: 1200px; /* Ancho máximo de la navegación */
+            margin: 0 auto; /* Centra la navegación horizontalmente */
+        }
+
+        /* Estilos del logo o nombre en el encabezado */
+        .logo {
+            font-family: var(--font-family-heading); /* Fuente específica para el logo */
+            font-size: var(--font-large);          /* Tamaño de fuente del logo */
+            font-weight: 700;                      /* Negrita */
+            color: var(--text-color-dark);         /* Color del texto del logo */
+            letter-spacing: 0.5px;                 /* Espaciado entre letras */
+        }
+
+        /* Lista de enlaces de navegación (menú) */
+        .nav-links {
+            display: flex; /* Utiliza Flexbox para mostrar los enlaces en línea */
+            gap: var(--spacing-md); /* Espacio entre cada enlace */
+            list-style: none; /* Elimina los puntos por defecto de las listas */
+        }
+
+        .nav-links a {
+            color: var(--text-color-dark); /* Color de texto de los enlaces de navegación */
+            font-weight: 600;              /* Seminegrita */
+            padding: var(--spacing-xs) 0;  /* Pequeño padding vertical */
+            position: relative;            /* Necesario para la animación de la línea inferior */
+            transition: color var(--default-transition); /* Transición suave para el color del texto */
+        }
+
+        /* Línea de animación que aparece debajo de los enlaces de navegación al interactuar */
+        .nav-links a::after {
+            content: '';                 /* Contenido vacío, la línea se crea con los estilos */
+            position: absolute;          /* Posicionamiento absoluto respecto al enlace */
+            width: 0;                    /* Ancho inicial de 0 (la línea no es visible al principio) */
+            height: 3px;                 /* Grosor de la línea */
+            bottom: -5px;                /* Posicionada ligeramente debajo del texto del enlace */
+            left: 0;                     /* Empieza desde la izquierda del enlace */
+            background-color: var(--accent-color); /* Color de acento para la línea */
+            transition: width var(--default-transition); /* Transición para que el ancho crezca suavemente */
+        }
+
+        /* Expande la línea al pasar el ratón (hover) o al enfocar el enlace con el teclado (focus) */
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%; /* La línea se expande a todo el ancho del enlace */
+        }
+
+        /* Cambia el color del texto del enlace de navegación al pasar el ratón */
+        .nav-links a:hover {
+            color: var(--accent-color); /* El texto cambia al color de acento */
+        }
+
+        /* Botón de alternar menú (icono de hamburguesa) para pantallas móviles */
+        .menu-toggle {
+            display: none; /* Oculto por defecto en escritorios, se muestra en pantallas pequeñas con media queries */
+            background: none; /* Sin fondo */
+            border: none;    /* Sin borde */
+            font-size: var(--font-xl); /* Tamaño grande para el icono */
+            cursor: pointer; /* Indica que es un elemento clicable */
+            color: var(--text-color-dark); /* Color del icono */
+            padding: var(--spacing-xs); /* Pequeño padding alrededor del icono */
+            transition: color var(--default-transition); /* Transición suave para el color */
+        }
+
+        /* Estilos para el botón de alternar menú al pasar el ratón o enfocar */
+        .menu-toggle:hover, .menu-toggle:focus {
+            color: var(--primary-color); /* Cambia el color al principal */
+            outline: 2px solid var(--primary-color); /* Contorno de enfoque para accesibilidad */
+            outline-offset: 2px; /* Separación del contorno */
+            border-radius: var(--border-radius-sm); /* Ligeramente redondeado */
+        }
+
+        /* -------------- */
+        /* --- Sección Hero (Principal) --- */
+        /* -------------- */
+        #hero {
+            text-align: center; /* Centra el texto y los elementos internos */
+            padding: 120px var(--spacing-lg); /* Relleno superior/inferior y lateral */
+            /* Fondo con una imagen de fondo y un gradiente oscuro superpuesto.
+               El gradiente ayuda a que el texto blanco sea más legible sobre la imagen. */
+            background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url(imagenes/fondo-oscuro.jpg);
+            background-size: cover;      /* Asegura que la imagen cubra todo el área */
+            background-position: center; /* Centra la imagen de fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: white;                /* Color de texto blanco para contrastar con el fondo oscuro */
+            min-height: 85vh;            /* Altura mínima del 85% del alto de la ventana del navegador */
+            display: flex;               /* Usa Flexbox para centrar el contenido vertical y horizontalmente */
+            align-items: center;         /* Centra verticalmente los ítems */
+            justify-content: center;     /* Centra horizontalmente los ítems */
+        }
+
+        /* Título principal de la sección Hero */
+        .hero-content h1 {
+            font-size: var(--font-xxl); /* Tamaño de fuente muy grande */
+            color: white;                /* Color blanco */
+            margin-bottom: var(--spacing-md); /* Margen inferior */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto para mayor legibilidad */
+        }
+        /* Párrafo descriptivo en la sección Hero */
+        .hero-content p {
+            font-size: var(--font-hero-text); /* Tamaño de fuente específico */
+            margin-bottom: var(--spacing-lg); /* Margen inferior */
+            color: var(--text-color-light); /* Color gris claro */
+            max-width: 700px;                /* Ancho máximo del párrafo */
+            margin-left: auto;               /* Centra el párrafo */
+            margin-right: auto;              /* Centra el párrafo */
+        }
+
+        /* Botón principal (call to action) en la sección Hero */
+        .hero-content .btn {
+            display: inline-block; /* Permite aplicar ancho, alto, padding */
+            padding: 12px 28px;    /* Relleno interno del botón */
+            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color)); /* Fondo con gradiente */
+            color: white;          /* Color del texto del botón */
+            text-decoration: none; /* Elimina el subrayado */
+            border-radius: var(--border-radius-md); /* Esquinas redondeadas */
+            transition: var(--default-transition); /* Transición suave para los efectos */
+            font-size: var(--font-hero-btn); /* Tamaño de fuente específico */
+            font-weight: 600;      /* Seminegrita */
+            border: none;          /* Sin borde */
+            cursor: pointer;       /* Indica que es clicable */
+            box-shadow: var(--shadow-md); /* Sombra para darle relieve */
+        }
+
+        /* Efecto al pasar el ratón (hover) o al enfocar (focus) el botón Hero */
+        .hero-content .btn:hover, .hero-content .btn:focus {
+            background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color)); /* Invierte el gradiente */
+            transform: translateY(-5px) scale(1.02); /* Se eleva ligeramente y aumenta un poco de tamaño */
+            box-shadow: var(--shadow-lg); /* La sombra se hace más pronunciada */
+            outline: none; /* Elimina el contorno de enfoque por defecto del navegador */
+        }
+
+        /* --------------------------------- */
+        /* --- Sección "Sobre Mí" --- */
+        /* --------------------------------- */
+        #sobre-mi {
+            background-color: var(--bg-off-white); /* Color de fondo */
+            display: flex;          /* Usa Flexbox para organizar el contenido */
+            flex-wrap: wrap;        /* Permite que los ítems se envuelvan a la siguiente línea en pantallas pequeñas */
+            align-items: center;    /* Alinea los ítems al centro verticalmente */
+            gap: var(--spacing-xl); /* Espacio entre la imagen y el texto */
+            justify-content: center; /* Centra los ítems horizontalmente */
+        }
+
+        /* Contenedor del contenido de la sección "Sobre Mí" (imagen y texto) */
+        .sobre-mi-contenido {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--spacing-xl);
+            justify-content: center;
+            max-width: 1000px; /* Ancho máximo para el contenido */
+            margin: 0 auto;    /* Centra el contenedor */
+        }
+
+        /* Estilos para la imagen de perfil en la sección "Sobre Mí" */
+        .sobre-mi-contenido img {
+            width: 200px;          /* Ancho fijo */
+            height: 200px;         /* Alto fijo */
+            border-radius: 50%;    /* Hace la imagen completamente circular */
+            object-fit: cover;     /* Asegura que la imagen cubra el área sin distorsionarse */
+            box-shadow: var(--shadow-lg); /* Sombra destacada */
+            transition: transform var(--default-transition), box-shadow var(--default-transition); /* Transiciones suaves */
+            border: 5px solid var(--primary-color); /* Borde decorativo alrededor de la imagen */
+        }
+
+        /* Efecto al pasar el ratón sobre la imagen de perfil */
+        .sobre-mi-contenido img:hover {
+            transform: scale(1.08) rotate(3deg); /* Ligeramente más grande y con una pequeña rotación */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al interactuar */
+        }
+
+        /* Contenedor del texto en la sección "Sobre Mí" */
+        .sobre-mi-contenido > div {
+            flex: 1; /* Permite que este div ocupe el espacio restante en el flex container */
+            min-width: 280px; /* Ancho mínimo antes de que el texto se apile en pantallas más pequeñas */
+            text-align: left; /* Alinea el texto a la izquierda */
+            padding: var(--spacing-md); /* Relleno interno */
+        }
+        /* Párrafos dentro de la sección "Sobre Mí" */
+        .sobre-mi-contenido p {
+            text-align: left;          /* Asegura la alineación izquierda del texto */
+            font-size: var(--font-medium); /* Tamaño de fuente */
+            color: var(--text-color-dark); /* Color del texto */
+        }
+
+        /* ----------------------------- */
+        /* --- Sección "Habilidades" --- */
+        /* ----------------------------- */
+        #habilidades {
+            background-color: var(--bg-skills); /* Color de fondo suave para esta sección */
+        }
+
+        /* Cuadrícula para mostrar las habilidades */
+        .skills-grid {
+            display: grid; /* Utiliza CSS Grid para el diseño en cuadrícula */
+            /* Define columnas responsivas: se ajustarán automáticamente para tener al menos 120px,
+               ocupando 1fr (fracción del espacio disponible) */
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-md); /* Espacio entre los elementos de la cuadrícula */
+            max-width: 1200px; /* Ancho máximo de la cuadrícula */
+            width: 100%;       /* Ocupa el 100% del ancho disponible de su padre */
+            margin: 0 auto;    /* Centra la cuadrícula horizontalmente */
+        }
+
+        /* Tarjetas individuales de habilidad */
+        .skill {
+            background: white;        /* Fondo blanco para cada tarjeta */
+            padding: var(--spacing-lg); /* Relleno interno */
+            border-radius: var(--border-radius-lg); /* Esquinas muy redondeadas */
+            box-shadow: var(--shadow-md); /* Sombra para efecto de elevación */
+            transition: var(--default-transition); /* Transiciones suaves para los efectos */
+            display: flex;            /* Usa Flexbox para organizar el icono y el texto */
+            flex-direction: column;   /* Apila el icono y el texto verticalmente */
+            align-items: center;      /* Centra los ítems horizontalmente */
+            justify-content: center;  /* Centra los ítems verticalmente */
+            min-height: 160px;        /* Altura mínima para asegurar uniformidad */
+            position: relative;       /* Necesario para el pseudo-elemento ::before */
+            overflow: hidden;         /* Oculta cualquier contenido que se desborde, importante para la animación de fondo */
+        }
+
+        /* Efecto de fondo al pasar el ratón sobre la tarjeta de habilidad (pseudo-elemento ::before) */
+        .skill::before {
+            content: '';                 /* Contenido vacío, usado para el fondo decorativo */
+            position: absolute;          /* Posicionamiento absoluto sobre la tarjeta */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradiente de color */
+            transform: scaleY(0);        /* Empieza con una escala vertical de 0 (invisible) */
+            transform-origin: bottom;    /* La animación de escala se origina desde la parte inferior */
+            transition: transform var(--default-transition); /* Transición para la animación de escala */
+            z-index: 1;                  /* Asegura que esté por debajo del contenido (icono y texto) */
+            opacity: 0.1;                /* Opacidad baja para un efecto sutil */
+        }
+
+        /* La animación de fondo se activa al pasar el ratón */
+        .skill:hover::before {
+            transform: scaleY(1); /* Se expande a la altura completa */
+        }
+
+        /* Efecto de elevación al pasar el ratón sobre la tarjeta de habilidad */
+        .skill:hover {
+            transform: translateY(-8px); /* Se eleva 8px verticalmente */
+            box-shadow: var(--shadow-lg); /* La sombra se hace más pronunciada */
+        }
+
+        /* Iconos de habilidad */
+        .skill i {
+            font-size: 3.5rem;             /* Tamaño grande para los iconos */
+            color: var(--primary-color);   /* Color principal para los iconos */
+            margin-bottom: var(--spacing-sm); /* Margen inferior */
+            z-index: 2;                    /* Asegura que el icono esté por encima del fondo animado */
+            transition: color var(--default-transition); /* Transición suave para el color del icono */
+        }
+        /* Cambio de color del icono al pasar el ratón */
+        .skill:hover i {
+            color: var(--accent-color); /* El icono cambia a color de acento */
+        }
+
+        /* Texto de la habilidad */
+        .skill span {
+            font-size: var(--font-medium); /* Tamaño de fuente del texto de la habilidad */
+            color: var(--text-color-dark); /* Color oscuro del texto */
+            font-weight: 600;              /* Seminegrita */
+            z-index: 2;                    /* Asegura que el texto esté por encima del fondo animado */
+            transition: color var(--default-transition); /* Transición suave para el color del texto */
+        }
+        /* El color del texto de la habilidad permanece igual al pasar el ratón (no cambia) */
+        .skill:hover span {
+            color: var(--text-color-dark);
+        }
+
+        /* ----------------------------------- */
+        /* --- Sección "Programas que Uso" --- */
+        /* ----------------------------------- */
+        #programas {
+            background-color: var(--bg-programs); /* Color de fondo para esta sección */
+        }
+
+        /* Contenedor de las imágenes de los programas/software */
+        .programas-img {
+            display: grid; /* Utiliza CSS Grid para el diseño en cuadrícula */
+            /* Define columnas responsivas que se ajustan automáticamente, con un mínimo de 130px de ancho */
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            max-width: 900px; /* Ancho máximo del contenedor */
+            margin: 0 auto;   /* Centra el contenedor */
+        }
+
+        /* Contenedor individual para cada imagen de programa */
+        .programas-img div {
+            display: flex;         /* Usa Flexbox para centrar la imagen */
+            align-items: center;   /* Centra verticalmente */
+            justify-content: center; /* Centra horizontalmente */
+            background-color: white; /* Fondo blanco *
+            border-radius: var(--border-radius-md); /* Esquinas redondeadas */
+            box-shadow: var(--shadow-sm); /* Sombra sutil */
+            transition: var(--default-transition); /* Transiciones suaves para los efectos */
+            min-height: 120px;       /* Altura mínima para uniformidad */
+        }
+
+        /* Efecto al pasar el ratón sobre el contenedor del programa */
+        .programas-img div:hover {
+            transform: scale(1.1); /* Zoom del 10% */
+            box-shadow: var(--shadow-md); /* Sombra más pronunciada */
+            background-color: var(--bg-light-gray); /* Fondo ligeramente más oscuro */
+        }
+
+        /* Imágenes de los programas/logos */
+        .programas-img img {
+            max-width: 70%;       /* Ancho máximo de la imagen dentro de su contenedor */
+            height: auto;         /* Mantiene la proporción de la imagen */
+            filter: grayscale(80%); /* Aplica un filtro de escala de grises (80% gris) */
+            transition: filter var(--default-transition); /* Transición suave para el filtro */
+        }
+
+        /* La imagen recupera su color original al pasar el ratón sobre su contenedor */
+        .programas-img div:hover img {
+            filter: grayscale(0%); /* Elimina el filtro de escala de grises */
+        }
+
+        /* ---------------------------- */
+        /* --- Sección "Formación" --- */
+        /* ---------------------------- */
+#formacion {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  color: #222;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+#formacion-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#formacion-title::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  width: 50px;
+  background: #00b4d8;
+  border-radius: 2px;
+}
+
+#formacion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#formacion li {
+  position: relative;
+  margin-bottom: 1.2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border-left: 5px solid #00b4d8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+#formacion li:hover {
+  transform: translateY(-3px);
+  border-left-color: #0077b6;
+}
+
+        /* -------------------------- */
+        /* --- Sección "Proyectos" --- */
+        /* Se rellenará con JavaScript usando template literals */
+        /* -------------------------- */
+        #proyectos {
+            background-color: var(--bg-projects); /* Color de fondo para esta sección */
+        }
+
+        /* Cuadrícula para mostrar los proyectos */
+        .proyectos-grid {
+            display: grid; /* Utiliza CSS Grid para el diseño en cuadrícula */
+            /* Define 4 columnas por defecto, que se ajustarán para tener un mínimo de 200px.
+               En pantallas más pequeñas, se reducirá a 3, luego a 2 y finalmente a 1 columna. */
+            grid-template-columns: repeat(4, minmax(200px, 1fr));
+            gap: var(--spacing-lg); /* Espacio entre las tarjetas de proyecto */
+            margin-top: var(--spacing-lg); /* Margen superior */
+            max-width: 1200px; /* Ancho máximo de la cuadrícula */
+            margin-left: auto; /* Centra la cuadrícula */
+            margin-right: auto; /* Centra la cuadrícula */
+        }
+
+        /* Tarjetas individuales de proyecto */
+        .proyecto-card {
+            background-color: white; /* Fondo blanco para la tarjeta */
+            border-radius: var(--border-radius-lg); /* Esquinas redondeadas */
+            overflow: hidden; /* Asegura que el contenido que sobresale (como la imagen con zoom) se recorte */
+            box-shadow: var(--shadow-md); /* Sombra para efecto de elevación */
+            transition: var(--default-transition); /* Transiciones suaves para los efectos */
+            display: flex;            /* Usa Flexbox para organizar el contenido (imagen, texto, botón) */
+            flex-direction: column;   /* Apila los elementos verticalmente */
+            text-align: left;         /* Alinea el texto a la izquierda dentro de la tarjeta */
+        }
+
+        /* Efecto al pasar el ratón sobre la tarjeta de proyecto */
+        .proyecto-card:hover {
+            box-shadow: var(--shadow-lg); /* Sombra más pronunciada */
+            transform: translateY(-8px); /* Se eleva 8px verticalmente */
+            background-color: var(--bg-light-gray); /* Fondo ligeramente más oscuro */
+        }
+
+        /* Imagen dentro de la tarjeta de proyecto */
+        .proyecto-card img {
+            height: 220px;             /* Altura fija de la imagen */
+            object-fit: cover;         /* Asegura que la imagen cubra el espacio sin distorsionarse */
+            width: 100%;               /* La imagen ocupa todo el ancho de la tarjeta */
+            transition: transform var(--default-transition); /* Transición suave para el efecto de zoom */
+            border-bottom: 3px solid var(--primary-color); /* Borde inferior decorativo */
+        }
+
+        /* Efecto de zoom en la imagen al pasar el ratón sobre la tarjeta */
+        .proyecto-card:hover img {
+            transform: scale(1.05); /* La imagen aumenta un 5% de tamaño */
+        }
+
+        /* Título del proyecto dentro de la tarjeta */
+        .proyecto-card h3 {
+            margin: var(--spacing-md) var(--spacing-md) var(--spacing-xs); /* Margen alrededor del título */
+            color: var(--primary-color); /* Color principal para el título del proyecto */
+            font-size: var(--font-large); /* Tamaño de fuente */
+            font-weight: 700;             /* Negrita */
+        }
+
+        /* Párrafo de descripción del proyecto */
+        .proyecto-card p {
+            padding: 0 var(--spacing-md) var(--spacing-md); /* Relleno lateral e inferior */
+            flex-grow: 1; /* Permite que el párrafo ocupe el espacio vertical disponible, empujando el botón hacia abajo */
+            font-size: var(--font-small); /* Tamaño de fuente pequeño */
+            color: #666; /* Gris más suave para el texto de descripción */
+        }
+
+        /* Botón "Explorar Proyecto" dentro de la tarjeta */
+        .btn-project {
+            display: inline-block; /* Permite aplicar padding, etc. */
+            background-color: var(--accent-color); /* Color de acento (naranja) */
+            color: white; /* Color del texto */
+            border-radius: var(--border-radius-md); /* Esquinas redondeadas */
+            /* Mueve el botón a la derecha y le da márgenes específicos para que quede bien alineado */
+            margin: var(--spacing-sm) var(--spacing-md) var(--spacing-md) auto; 
+            transition: var(--default-transition); /* Transiciones suaves */
+            font-size: var(--font-base); /* Tamaño de fuente base */
+            font-weight: 600;             /* Seminegrita */
+            border: none;                 /* Sin borde */
+            cursor: pointer;              /* Indica que es clicable */
+            box-shadow: var(--shadow-sm); /* Sombra sutil */
+        }
+
+        /* Efecto al pasar el ratón (hover) o al enfocar (focus) el botón del proyecto */
+        .btn-project:hover, .btn-project:focus {
+            background-color: var(--primary-color); /* Cambia a azul principal */
+            transform: translateY(-3px); /* Se eleva 3px verticalmente */
+            box-shadow: var(--shadow-md); /* Sombra más pronunciada */
+            outline: none; /* Elimina el contorno de enfoque por defecto */
+        }
+
+        /* --------------------------- */
+        /* --- Sección "Contacto" --- */
+        /* --------------------------- */
+      #contacto {
+  background-color: var(--bg-contact);
+}
+
+#contacto h2 {
+  font-size: var(--font-large);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+#contacto form {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  height: auto; /* Se adapta al contenido */
+}
+
+#contacto label {
+  font-size: var(--font-small);
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 0.3rem;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: var(--font-base);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-sm);
+  background-color: #fcfcfc;
+  transition: border-color var(--default-transition), box-shadow var(--default-transition);
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
+  outline: none;
+}
+
+#contacto textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.boton-contenedor {
+  text-align: center;
+  margin-top: var(--spacing-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.6rem 1.2rem;
+  background-image: linear-gradient(to right, var(--accent-color), #FF5722);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--default-transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover,
+.btn:focus {
+  background-image: linear-gradient(to right, #FF5722, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  #contacto form {
+    padding: var(--spacing-sm);
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Volver al inicio a la pagina  principal*/
+#btn-volver-inicio {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#btn-volver-inicio:hover {
+  background-color: #0056b3;
+}
+
+#btn-volver-inicio i {
+  margin-right: 6px;
+}
+
+        /* -------- */
+        /* --- Footer (Pie de Página) --- */
+        /* -------- */
+        footer {
+            background-color: var(--bg-dark); /* Color de fondo oscuro */
+            color: var(--text-color-light); /* Color de texto claro */
+            text-align: center; /* Centra el contenido */
+            font-size: var(--font-small); /* Tamaño de fuente pequeño */
+            margin-top: var(--spacing-xxl); /* Gran margen superior para separarlo de la última sección */
+            border-top: 5px solid var(--primary-color); /* Borde superior decorativo */
+        }
+
+        /* Sección "aside" en el footer (utilizado para el enlace de LinkedIn) */
+        footer aside {
+            margin-bottom: var(--spacing-sm); /* Margen inferior */
+            display: flex;             /* Usa Flexbox para organizar el texto y el icono */
+            justify-content: center;   /* Centra los elementos horizontalmente */
+            align-items: center;       /* Alinea los elementos verticalmente */
+            gap: var(--spacing-xs);    /* Espacio entre los elementos */
+        }
+
+        /* Párrafo dentro del aside del footer */
+        aside p {
+            margin: 0;                   /* Elimina márgenes por defecto */
+            font-size: var(--font-medium); /* Tamaño de fuente mediano */
+            font-weight: 300;            /* Fuente más ligera */
+        }
+
+        /* Icono de LinkedIn en el footer */
+        .linkedin-icon {
+            font-size: var(--font-xl);     /* Tamaño grande para el icono */
+            color: var(--text-color-light); /* Color claro del icono */
+            transition: var(--default-transition); /* Transición suave */
+            display: inline-block;         /* Permite aplicar transformaciones */
+        }
+
+        /* Efecto al pasar el ratón (hover) o al enfocar (focus) el icono de LinkedIn */
+        .linkedin-icon:hover, .linkedin-icon:focus {
+            color: var(--accent-color); /* Cambia el color a naranja */
+            transform: scale(1.2) rotate(5deg); /* Aumenta tamaño y rota ligeramente */
+            outline: none; /* Elimina el contorno de enfoque */
+        }
+
+        /* ------------------------------------- */
+        /* --- Botón de "Volver Arriba" (Generado por JS) --- */
+        /* ------------------------------------- */
+        #scrollToTopBtn {
+            display: none; /* Oculto por defecto, se mostrará/ocultará con JavaScript */
+            position: fixed; /* Permanece fijo en la ventana del navegador */
+            bottom: 30px;    /* Posicionado a 30px del borde inferior */
+            right: 30px;     /* Posicionado a 30px del borde derecho */
+            background-color: var(--primary-color); /* Color de fondo */
+            color: white;    /* Color del icono blanco */
+            border: none;    /* Sin borde */
+            border-radius: 50%; /* Lo hace completamente circular */
+            width: 55px;     /* Ancho del botón */
+            height: 55px;    /* Alto del botón */
+            font-size: var(--font-large); /* Tamaño del icono */
+            cursor: pointer; /* Indica que es clicable */
+            box-shadow: var(--shadow-md); /* Sombra */
+            transition: var(--default-transition); /* Transiciones suaves */
+            z-index: 999;    /* Asegura que esté por encima de la mayoría de los elementos */
+            display: flex;   /* Usa Flexbox para centrar el icono dentro del botón */
+            align-items: center; /* Centra verticalmente */
+            justify-content: center; /* Centra horizontalmente */
+            border: 2px solid white; /* Borde blanco alrededor */
+        }
+
+        /* Efecto al pasar el ratón (hover) o al enfocar (focus) el botón de volver arriba */
+        #scrollToTopBtn:hover, #scrollToTopBtn:focus {
+            background-color: var(--secondary-color); /* Cambia el color de fondo */
+            transform: translateY(-5px) scale(1.05); /* Se eleva y aumenta un poco de tamaño */
+            outline: none; /* Elimina el contorno de enfoque */
+            box-shadow: var(--shadow-lg); /* Sombra más pronunciada */
+        }
+
+        /* ------------------------------------- */
+        /* --- Clases de Accesibilidad Específicas --- */
+        /* ------------------------------------- */
+        /* Clase para ocultar visualmente contenido, pero que sigue siendo accesible para lectores de pantalla */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        /* Clase para un mensaje de éxito, visible pero también anunciado a lectores de pantalla */
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+
+        /* -------------------------- */
+        /* --- Media Queries (Diseño Responsivo) --- */
+        /* -------------------------- */
+
+        /* Para pantallas con un ancho máximo de 1200px (ej. laptops grandes) */
+        @media (max-width: 1200px) {
+            .proyectos-grid {
+                grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Cambia a 3 columnas en lugar de 4 */
+            }
+        }
+
+        /* Para pantallas con un ancho máximo de 992px (ej. tablets en horizontal) */
+        @media (max-width: 992px) {
+            .proyectos-grid {
+                grid-template-columns: repeat(2, minmax(250px, 1fr)); /* Cambia a 2 columnas */
+            }
+            .skills-grid {
+                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Habilidades más compactas */
+            }
+        }
+
+        /* Para pantallas con un ancho máximo de 768px (ej. tablets en vertical y móviles grandes) */
+        @media (max-width: 768px) {
+            /* Header y Navegación */
+            header {
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+
+            .nav-links {
+                display: none; /* Oculta la navegación en línea por defecto */
+                flex-direction: column; /* Apila los enlaces verticalmente */
+                background-color: var(--bg-light-gray); /* Fondo para el menú desplegable */
+                position: absolute; /* Posiciona el menú absolutamente */
+                top: 100%; /* Se posiciona justo debajo del header */
+                left: 0;   /* Alineado a la izquierda */
+                width: 100%; /* Ocupa todo el ancho */
+                padding: var(--spacing-sm) 0; /* Relleno */
+                box-shadow: var(--shadow-md); /* Sombra */
+            }
+
+            .nav-links.active {
+                display: flex; /* Muestra el menú cuando tiene la clase 'active' (controlado por JS) */
+            }
+
+            .nav-links li {
+                margin: 0;
+                text-align: center; /* Centra el texto de cada enlace */
+            }
+
+            .nav-links a {
+                padding: var(--spacing-md); /* Mayor padding para áreas de clic */
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separador sutil */
+                width: 100%; /* Ocupa todo el ancho del elemento padre */
+                display: block; /* Para que el padding y el border-bottom funcionen en toda la línea */
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none; /* Elimina el borde inferior del último enlace */
+            }
+
+            .menu-toggle {
+                display: block; /* Muestra el botón de alternar menú */
+            }
+
+            /* Sección Hero */
+            #hero {
+                padding: 100px var(--spacing-md);
+                min-height: 70vh; /* Altura mínima ligeramente menor */
+            }
+            .hero-content h1 {
+                font-size: var(--font-xxl); /* Puede mantenerse grande o ajustarse */
+            }
+            .hero-content p {
+                font-size: var(--font-large); /* Texto más grande para mejor lectura en móvil */
+            }
+            .hero-content .btn {
+                font-size: var(--font-base);
+                padding: 10px 20px;
+            }
+
+            /* Sobre Mí */
+            .sobre-mi-contenido {
+                flex-direction: column; /* Apila la imagen y el texto verticalmente */
+                text-align: center;
+                gap: var(--spacing-lg);
+            }
+            .sobre-mi-contenido > div {
+                min-width: unset; /* Reinicia el ancho mínimo */
+                text-align: center; /* Centra el texto */
+            }
+            .sobre-mi-contenido p {
+                text-align: center; /* Centra los párrafos */
+            }
+            .sobre-mi-contenido img {
+                width: 150px; /* Imagen más pequeña */
+                height: 150px;
+            }
+
+            /* Habilidades y Programas */
+            .skills-grid,
+            .programas-img {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Más compactos en móvil */
+                gap: var(--spacing-md);
+            }
+
+            .skill {
+                padding: var(--spacing-md);
+                min-height: 140px;
+            }
+            .skill i {
+                font-size: 3rem;
+            }
+
+            .programas-img div {
+                padding: var(--spacing-sm);
+                min-height: 100px;
+            }
+            .programas-img img {
+                max-width: 60%;
+            }
+
+            /* Proyectos */
+            .proyectos-grid {
+                grid-template-columns: 1fr; /* Una sola columna para proyectos en móvil */
+                gap: var(--spacing-lg);
+            }
+            .proyecto-card img {
+                height: 180px;
+            }
+            .btn-project {
+                margin: var(--spacing-sm) auto var(--spacing-md); /* Centrar de nuevo en móvil */
+            }
+
+            /* Contacto */
+            #contacto form {
+                padding: var(--spacing-lg);
+            }
+            label, input, textarea, .btn {
+                font-size: var(--font-small);
+            }
+            .btn {
+                padding: 10px 20px;
+            }
+
+            .linkedin-icon {
+                font-size: var(--font-large);
+            }
+        }
+
+        /* Para pantallas con un ancho máximo de 480px (ej. móviles pequeños) */
+        @media (max-width: 480px) {
+            .section-padding {
+                padding: var(--spacing-xl) var(--spacing-md);
+            }
+            h2 {
+                font-size: var(--font-large);
+                margin-bottom: var(--spacing-lg);
+            }
+            .hero-content h1 {
+                font-size: var(--font-xl);
+            }
+            .hero-content p {
+                font-size: var(--font-base);
+            }
+            .skills-grid,
+            .programas-img {
+                grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+            }
+            .skill {
+                min-height: 120px;
+            }
+            .skill i {
+                font-size: 2.5rem;
+            }
+            .programas-img div {
+                min-height: 80px;
+            }
+            #contacto form {
+                padding: var(--spacing-md);
+            }
+            .logo {
+                font-size: var(--font-xl);
+            }
+            #scrollToTopBtn {
+                width: 45px;
+                height: 45px;
+                font-size: var(--font-medium);
+                bottom: 20px;
+                right: 20px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sonia Correa</div>
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links" id="main-navigation" role="navigation">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tecnologia-detallados">Tecnologia</a></li>
+                <li><a href="#portafolio.html">Portafolio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section-padding" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Hola, soy Sonia Correa</h1>
+                <p>Desarrolladora Web especializada en crear experiencias digitales modernas y funcionales.</p>
+                <a href="#proyectos" class="btn" role="button">Ver Proyectos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section-padding" aria-labelledby="sobre-mi-title">
+            <h2 id="sobre-mi-title">Sobre Mí</h2>
+            <div class="sobre-mi-contenido">
+                <img src="imagenes/sonia.jpg" alt="Foto de perfil de Sonia Correa, una desarrolladora web sonriente." />
+                <div>
+                    <p>Soy una **apasionada del desarrollo web** con un enfoque en la creación de soluciones digitales que no solo funcionan a la perfección, sino que también son intuitivas y visualmente atractivas. Mi viaje en este mundo comenzó con **HTML y CSS**, sentando las bases para mi amor por la estructura y el diseño web.</p>
+                    <p>Constantemente me desafío a mí misma para **ampliar mis conocimientos**, explorando nuevas tecnologías como JavaScript para construir interactividad dinámica y sumergiéndome en las últimas tendencias de **UX/UI** para asegurar que cada sitio web sea una experiencia placentera para el usuario.</p>
+                    <p>Mi objetivo es transformar ideas en realidad digital, creando plataformas que sean tanto **innovadoras como accesibles**.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="section-padding" aria-labelledby="habilidades-title">
+            <h2 id="habilidades-title">Mis Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill"><i class="fab fa-html5" aria-hidden="true"></i><span>HTML5</span></div>
+                <div class="skill"><i class="fab fa-css3-alt" aria-hidden="true"></i><span>CSS3</span></div>
+                <div class="skill"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+                <div class="skill"><i class="fab fa-react" aria-hidden="true"></i><span>React.js</span></div>
+                <div class="skill"><i class="fas fa-database" aria-hidden="true"></i><span>SQL</span></div>
+                <div class="skill"><i class="fab fa-git-alt" aria-hidden="true"></i><span>Git & GitHub</span></div>
+                <div class="skill"><i class="fas fa-palette" aria-hidden="true"></i><span>Diseño UI/UX</span></div>
+            </div>
+        </section>
+
+        <section id="programas" class="section-padding" aria-labelledby="programas-title">
+            <h2 id="programas-title">Herramientas y Software</h2>
+            <div class="programas-img">
+                <div><img src="imagenes/visualstudio.jpg" alt="Logo de Visual Studio Code" /></div>
+                <div><img src="imagenes/figma.jpg" alt="Logo de Figma" /></div>
+                <div><img src="imagenes/hubSpot.jpg" alt="Logo de HubSpot" /></div>
+                <div><img src="imagenes/windev.jpg" alt="Logo de WinDev" /></div>
+            </div>
+        </section>
+
+        <section id="formacion" class="section-padding" aria-labelledby="formacion-title">
+            <h2 id="formacion-title">Mi Formación</h2>
+            <ul>
+                <li>Desarrollo Web Full-Stack - Instituto XYZ (2022)</li>
+                <li>Curso Avanzado de HTML y CSS - Platzi (2023)</li>
+                <li>Master en JavaScript Moderno - Codecademy (2023)</li>
+                <li>Técnicas Avanzadas de Canvas y Gráficos Web - Codecademy (2024)</li>
+                <li>Fundamentos de Programación con Python - MasterD (En curso, 2025)</li>
+            </ul>
+        </section>
+
+        <section id="proyectos" class="section-padding" aria-labelledby="proyectos-title">
+            <h2 id="proyectos-title">Mis Proyectos Recientes</h2>
+            <div class="proyectos-grid" id="proyectos-container">
+                </div>
+        </section>
+
+        <section id="contacto" class="section-padding" aria-labelledby="contacto-title">
+            <h2 id="contacto-title">Contacta Conmigo</h2>
+            <form action="#" method="post" aria-live="polite">
+                <p class="sr-only" aria-live="assertive" id="form-status"></p>
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required aria-required="true" />
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required aria-required="true" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu.email@ejemplo.com" required aria-required="true" />
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Me gustaría hablar sobre..." required aria-required="true"></textarea>
+
+                <div class="boton-contenedor">
+                    <button type="submit" class="btn" role="button"><i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+
+    <footer>
+        <aside>
+            <p>Conéctate conmigo en LinkedIn:</p>
+            <a href="https://www.linkedin.com/in/tu-nombre-de-usuario" class="linkedin-icon" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Sonia Correa (se abre en una nueva pestaña)">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </aside>
+        <p>&copy; 2025 Sonia Correa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Este código se ejecutará solo una vez que el DOM (estructura HTML) esté completamente cargado.
+    // Esto asegura que todos los elementos HTML necesarios ya existan en la página cuando el JavaScript intente acceder a ellos.
+
+    // ----------------------------------------------------
+    // --- Funcionalidad del Menú de Navegación Móvil ---
+    // ----------------------------------------------------
+    // Selecciona el botón de alternar (hamburguesa) y la lista de enlaces de navegación.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Verifica que ambos elementos existan antes de intentar añadirles funcionalidad.
+    if (menuToggle && navLinks) {
+        // Añade un 'event listener' (escuchador de eventos) al botón de alternar.
+        // Cuando se hace clic en el botón:
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Alterna la clase 'active' en la lista de enlaces.
+                                                 // Si 'active' está presente, el menú se muestra (CSS lo controla).
+                                                 // Si 'active' no está presente, el menú se oculta.
+
+            // Para accesibilidad (ARIA): Actualiza el atributo 'aria-expanded' del botón.
+            // Esto le dice a los lectores de pantalla si el menú que controla está abierto (true) o cerrado (false).
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Cambia el icono del botón de hamburguesa a una 'X' y viceversa.
+            const icon = menuToggle.querySelector('i'); // Selecciona el icono dentro del botón.
+            if (isExpanded) {
+                icon.classList.remove('fa-bars'); // Quita el icono de hamburguesa.
+                icon.classList.add('fa-times');   // Añade el icono de 'X'.
+            } else {
+                icon.classList.remove('fa-times'); // Quita el icono de 'X'.
+                icon.classList.add('fa-bars');    // Añade el icono de hamburguesa.
+            }
+        });
+
+        // Cierra el menú móvil automáticamente al hacer clic en cualquiera de sus enlaces.
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Si el menú está abierto (tiene la clase 'active'):
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active'); // Elimina la clase 'active' para ocultarlo.
+                    menuToggle.setAttribute('aria-expanded', 'false'); // Restablece el estado ARIA a cerrado.
+                    // Vuelve a cambiar el icono a la hamburguesa.
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // -------------------------------------------
+    // --- Desplazamiento Suave para Enlaces Internos ---
+    // -------------------------------------------
+    // Selecciona todos los enlaces que tienen un 'href' que comienza con '#' (enlaces a secciones de la misma página).
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Previene el comportamiento de salto instantáneo por defecto del navegador.
+
+            const targetId = this.getAttribute('href'); // Obtiene el valor del atributo 'href' (ej. "#sobre-mi").
+            const targetElement = document.querySelector(targetId); // Encuentra el elemento HTML correspondiente en el DOM.
+
+            if (targetElement) {
+                // Calcula la altura del encabezado fijo para ajustar la posición de desplazamiento.
+                const headerOffset = document.querySelector('header').offsetHeight;
+                // Calcula la posición vertical del elemento de destino desde la parte superior del documento.
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                // Calcula la posición final de desplazamiento, restando la altura del encabezado y un pequeño margen extra.
+                const offsetPosition = elementPosition - headerOffset - 20; // 20px de margen adicional.
+
+                // Realiza el desplazamiento suave a la posición calculada.
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth' // Habilita la animación de desplazamiento suave.
+                });
+
+                // Para mejorar la accesibilidad:
+                // Después del desplazamiento, se enfoca el elemento de destino para que los usuarios de teclado
+                // o lectores de pantalla sepan dónde están.
+                targetElement.focus();
+                // Si el elemento no es naturalmente enfocable (como un <div> o <section>),
+                // se le asigna 'tabindex="-1"' para que pueda ser enfocado programáticamente.
+                if (targetElement.tabIndex === -1) {
+                    targetElement.setAttribute('tabindex', '-1');
+                }
+            }
+        });
+    });
+
+    // ------------------------------------
+    // --- Botón de "Volver Arriba" ---
+    // ------------------------------------
+    // Crea un nuevo elemento <button> dinámicamente.
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.id = 'scrollToTopBtn'; // Le asigna un ID para estilos y selección.
+    // Añade un icono de flecha hacia arriba de Font Awesome.
+    // 'aria-hidden="true"' hace que el icono sea ignorado por los lectores de pantalla, ya que el 'aria-label' del botón ya lo describe.
+    scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
+    scrollToTopBtn.setAttribute('aria-label', 'Volver arriba de la página'); // Etiqueta de accesibilidad para el botón.
+    document.body.appendChild(scrollToTopBtn); // Agrega el botón al final del cuerpo del documento.
+
+    // Añade un 'event listener' al evento 'scroll' de la ventana.
+    // Esto detecta cuándo el usuario se desplaza por la página.
+    window.addEventListener('scroll', () => {
+        // Si el usuario se ha desplazado más de 300 píxeles hacia abajo:
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex'; // Muestra el botón (usando flex para centrar el icono).
+        } else {
+            scrollToTopBtn.style.display = 'none'; // Si no, lo oculta.
+        }
+    });
+
+    // Añade un 'event listener' al botón de "Volver Arriba".
+    // Cuando se hace clic en el botón:
+    scrollToTopBtn.addEventListener('click', () => {
+        // Desplaza la ventana suavemente hasta la parte superior de la página (posición 0).
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento suave.
+        });
+    });
+
+    // -------------------------------------------------------------------
+    // --- Renderizado de Proyectos usando Template Literals y JS ---
+    // -------------------------------------------------------------------
+    // Array de objetos JavaScript, donde cada objeto representa un proyecto.
+    // Contiene la información necesaria para crear cada tarjeta de proyecto.
+    const proyectosData = [
+        {
+            imgSrc: 'imagenes/cerveza dois corvos.jpg',
+            altText: 'Imagen del proyecto Cerveza Dois Corvos',
+            title: 'Cerveza Dois Corvos',
+            description: 'Exploré el diseño moderno para la web de una de las cerveceras más prestigiosas de Lisboa, enfocándome en la experiencia del usuario y la narrativa visual de sus productos artesanales.',
+            link: 'https://ejemplo.com/cerveza-dois-corvos' // URL del proyecto real
+        },
+        {
+            imgSrc: 'imagenes/cerveza letra.jpg',
+            altText: 'Imagen del proyecto Cerveza Letra',
+            title: 'Cerveza Letra',
+            description: 'Desarrollé una interfaz interactiva para la cervecera Letra, resaltando la fusión de tradición y experimentación a través de un diseño limpio y una navegación intuitiva por sus variadas clasificaciones de cerveza.',
+            link: 'https://ejemplo.com/cerveza-letra'
+        },
+        {
+            imgSrc: 'imagenes/cerveza musa.jpg',
+            altText: 'Imagen del proyecto Cerveza Musa',
+            title: 'Cerveza Musa',
+            description: 'Creé una experiencia digital envolvente para Musa, la cervecera de Lisboa. Integré su temática musical y recetas innovadoras en un diseño dinámico que captura la esencia de su marca vanguardista.',
+            link: 'https://ejemplo.com/cerveza-musa'
+        },
+        {
+            imgSrc: 'imagenes/cerveza sagres.jpg',
+            altText: 'Imagen del proyecto Cerveza Sagres',
+            title: 'Cerveza Sagres',
+            description: 'Diseñé una landing page atractiva para Cerveza Sagres, enfocada en resaltar su frescura y versatilidad. El objetivo fue crear un portal visualmente refrescante que invite a explorar su legado y combinaciones culinarias.',
+            link: 'https://ejemplo.com/cerveza-sagres'
+        }
+        // Puedes añadir más objetos de proyectos aquí siguiendo la misma estructura.
+        // Esto hace que añadir nuevos proyectos sea muy fácil, solo tienes que modificar este array.
+    ];
+
+    // Selecciona el contenedor HTML donde se insertarán los proyectos.
+    const proyectosContainer = document.getElementById('proyectos-container');
+
+    if (proyectosContainer) {
+        let proyectosHTML = ''; // Variable para acumular el HTML de todas las tarjetas de proyecto.
+
+        // Itera sobre cada objeto en el array `proyectosData`.
+        proyectosData.forEach(proyecto => {
+            // Utiliza "template literals" (las comillas invertidas ``) para construir el HTML de cada tarjeta de proyecto.
+            // Esto permite incrustar variables de JavaScript (como ${proyecto.title}) directamente dentro del string HTML.
+            // El 'aria-label' en el enlace mejora la accesibilidad, describiendo el destino del enlace para lectores de pantalla.
+            proyectosHTML += `
+                <div class="proyecto-card">
+                    <img src="${proyecto.imgSrc}" alt="${proyecto.altText}" />
+                    <h3>${proyecto.title}</h3>
+                    <p>${proyecto.description}</p>
+                </div>
+            `;
+        });
+        // Una vez que se ha generado el HTML para todos los proyectos, se inserta en el contenedor en el DOM.
+        proyectosContainer.innerHTML = proyectosHTML;
+    }
+
+    // -------------------------------------------------------------
+    // --- Almacenamiento Local (localStorage) para el Formulario de Contacto ---
+    // -------------------------------------------------------------
+    // Selecciona el formulario y cada uno de sus campos de entrada por su ID.
+    const contactForm = document.querySelector('#contacto form');
+    const nombreInput = document.getElementById('nombre');
+    const apellidoInput = document.getElementById('apellido');
+    const emailInput = document.getElementById('email');
+    const mensajeTextarea = document.getElementById('mensaje');
+    const formStatus = document.getElementById('form-status'); // Elemento para mostrar mensajes de estado (accesible).
+
+    // Verifica que todos los elementos del formulario existan en la página antes de intentar manipularlos.
+    if (contactForm && nombreInput && apellidoInput && emailInput && mensajeTextarea && formStatus) {
+        // Función para cargar los datos guardados en 'localStorage' al cargar la página.
+        const loadFormData = () => {
+            // Intenta obtener los valores de los campos del 'localStorage' usando claves específicas.
+            const savedNombre = localStorage.getItem('contactForm_nombre');
+            const savedApellido = localStorage.getItem('contactForm_apellido');
+            const savedEmail = localStorage.getItem('contactForm_email');
+            const savedMensaje = localStorage.getItem('contactForm_mensaje');
+
+            // Si se encuentran valores guardados, los asigna a los campos del formulario.
+            if (savedNombre) nombreInput.value = savedNombre;
+            if (savedApellido) apellidoInput.value = savedApellido;
+            if (savedEmail) emailInput.value = savedEmail;
+            if (savedMensaje) mensajeTextarea.value = savedMensaje;
+        };
+
+        // Llama a la función para cargar los datos del formulario tan pronto como la página se carga.
+        loadFormData();
+
+        // Añade 'event listeners' a cada campo de entrada para guardar su valor en 'localStorage'
+        // cada vez que el usuario escribe ('input' event).
+        nombreInput.addEventListener('input', () => {
+            localStorage.setItem('contactForm_nombre', nombreInput.value);
+        });
+        apellidoInput.addEventListener('input', () => {
+            localStorage.setItem('contactForm_apellido', apellidoInput.value);
+        });
+        emailInput.addEventListener('input', () => {
+            localStorage.setItem('contactForm_email', emailInput.value);
+        });
+        mensajeTextarea.addEventListener('input', () => {
+            localStorage.setItem('contactForm_mensaje', mensajeTextarea.value);
+        });
+
+        // Manejador de eventos para cuando el formulario es enviado (simulado).
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Previene el envío real del formulario (para simular el proceso en el frontend).
+
+            // Muestra un mensaje de éxito al usuario.
+            formStatus.textContent = '¡Formulario enviado con éxito! Gracias por tu mensaje.';
+            formStatus.classList.add('success-message'); // Añade una clase para estilos visuales (ej. color verde).
+            
+            // Establece un temporizador para borrar el mensaje de éxito después de 5 segundos.
+            setTimeout(() => {
+                formStatus.textContent = ''; // Limpia el texto.
+                formStatus.classList.remove('success-message'); // Elimina la clase de estilo.
+            }, 5000);
+
+            // Una vez que el formulario es "enviado", se eliminan los datos de 'localStorage'.
+            localStorage.removeItem('contactForm_nombre');
+            localStorage.removeItem('contactForm_apellido');
+            localStorage.removeItem('contactForm_email');
+            localStorage.removeItem('contactForm_mensaje');
+            
+            contactForm.reset(); // Restablece todos los campos del formulario a sus valores iniciales (vacíos).
+            nombreInput.focus(); // Devuelve el foco al primer campo para mejorar la usabilidad, en caso de que el usuario quiera enviar otro mensaje.
+        });
+    }
+
+    // -----------------------------------------------------
+    // --- Accesibilidad: Trampa de Foco para el Menú Móvil ---
+    // -----------------------------------------------------
+    // Esta sección mejora la navegación con teclado en el menú móvil.
+    // Asegura que cuando el menú está abierto, el foco del teclado se mantenga dentro de los elementos del menú,
+    // creando una "trampa" o "modal" de foco.
+    if (navLinks && menuToggle) {
+        // Cuando se presiona una tecla dentro del menú de navegación:
+        navLinks.addEventListener('keydown', (e) => {
+            if (!navLinks.classList.contains('active')) return; // Solo funciona si el menú está abierto.
+
+            const focusableElements = navLinks.querySelectorAll('a'); // Obtiene todos los enlaces enfocables dentro del menú.
+            if (focusableElements.length === 0) return; // Si no hay elementos enfocables, no hace nada.
+
+            const firstFocusableElement = focusableElements[0]; // El primer enlace del menú.
+            const lastFocusableElement = focusableElements[focusableElements.length - 1]; // El último enlace del menú.
+
+            if (e.key === 'Tab') { // Si la tecla presionada es 'Tab'.
+                if (e.shiftKey) { // Si también se presiona 'Shift' (Shift + Tab: navegación inversa).
+                    // Si el foco está en el primer elemento y se presiona Shift + Tab, mueve el foco al último elemento.
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault(); // Previene que el navegador mueva el foco fuera del menú.
+                    }
+                } else { // Si solo se presiona 'Tab' (navegación hacia adelante).
+                    // Si el foco está en el último elemento y se presiona Tab, mueve el foco al primer elemento.
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault(); // Previene que el navegador mueva el foco fuera del menú.
+                    }
+                }
+            }
+        });
+
+        // Además, maneja el caso específico de presionar Shift+Tab desde el botón de alternar menú.
+        // Si el menú está abierto y el usuario presiona Shift+Tab desde el botón, el foco se moverá al último elemento del menú,
+        // en lugar de ir a un elemento anterior fuera del menú.
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab' && e.shiftKey && navLinks.classList.contains('active')) {
+                const focusableElements = navLinks.querySelectorAll('a');
+                if (focusableElements.length > 0) {
+                    focusableElements[focusableElements.length - 1].focus();
+                    e.preventDefault();
+                }
+            }
+        });
+    }
+});
+    </script>
+</body>
+</html>
